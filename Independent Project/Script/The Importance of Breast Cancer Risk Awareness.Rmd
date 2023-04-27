@@ -1,0 +1,17 @@
+---
+title: "The Importance of Breast Cancer Risk Awareness"
+author: "Nicole Ayala"
+date: "`r Sys.Date()`"
+output: 
+    prettydoc::html_pretty:
+    toc: TRUE
+    theme: HPSTR
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+### The Purpose of This Independent Project
