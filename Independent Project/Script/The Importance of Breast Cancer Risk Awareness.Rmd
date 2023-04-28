@@ -15,3 +15,133 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 ### The Purpose of This Independent Project
+
+
+
+
+
+
+
+### Load the Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(ggplot2)
+library(ggridges)
+library(hrbrthemes)
+library(RColorBrewer)
+library(dplyr)
+library(tidyr)
+library(gganimate)
+```
+
+
+### Read in the Data
+```{r}
+cancer <- read.csv(here("Independent Project", "Data", "breast-cancer.csv")) # the breast cancer data set
+#View(cancer)
+```
+
+### Filter the Data
+```{r}
+filtercancer <- cancer %>%
+  drop_na() %>%
+  filter(class == "recurrence-events")
+
+```
+
+### Making a Functional Plot - *To Be Animated or Not to Be Animated*
+```{r}
+cancerplot <- function(data = filtercancer, x, y, animate = TRUE)
+  
+  ggplot(data, aes(x = {{x}},
+                   y = {{y}},
+                   color = `deg.malig`))+
+    geom_density_ridges2() +
+    transition_states( 
+    age, # what are we animating by
+    transition_length = 2, #The relative length of the transition.
+     state_length = 2 # The length of the pause between transitions
+   )+
+  ease_aes("bounce-in-out")  +
+  ggtitle(' Ascending of Patient Age')+ # title of  patient age 
+    theme_ipsum_es() +
+    scale_color_brewer(palette = "RdPu") +
+    labs(x = "Recurrence Event",  # x axis
+         y = "Invasive Auxillary Lymph Nodes", # y axis
+         title = "Correlation of the Metastasized  Auxillary Lymph Nodes with an Individual's Reccurrence", # title
+         subtitle = " An individual that is back in remission after the cancer recurred is most likely to have a metastasizing cancer with abornmally inflamed auxillary lymphnode.") + # subtitle
+    theme(plot.title = element_text(size = 30, hjust = 0.5, color ="pink"),
+        plot.title.position = "plot", # title adjustments
+        plot.subtitle = element_text(size =20,hjust = 0.5, lineheight = 1.1, color = "pink"),
+        axis.title = element_text(size=30,color = "pink", hjust = 0.5), # title adjustments
+        axis.text = element_text(size = 30,color = "pink",hjust = 0.5), # text adjustments
+        panel.grid = element_line(linewidth = 0.35, linetype = FALSE, color = "white"), # background gridlines
+        plot.margin = unit(c(1.0, 1.0, 1.0, 1.0), "cm"), # margin adjustments
+        plot.background = element_rect(color = "white"))
+```
+
+```{r}
+cancerplot <- function(data = filtercancer, x, y ,animate = TRUE) {
+  
+if(animate==TRUE){
+  ggplot(data, 
+         aes(x = {{x}},
+             y = {{y}},
+             color = `deg.malig`))+
+    geom_density_ridges2() +
+    transition_states( 
+    age, # what are we animating by
+    transition_length = 2, #The relative length of the transition.
+     state_length = 2 # The length of the pause between transitions
+   )+
+  ease_aes("bounce-in-out")  +
+  ggtitle(' Ascending of Patient Age')+ # title of  patient age 
+    theme_ipsum_es() +
+    scale_color_brewer(palette = "RdPu") +
+    labs(x = "Recurrence Event",  # x axis
+         y = "Invasive Auxillary Lymph Nodes", # y axis
+         title = "Correlation of the Metastasized  Auxillary Lymph Nodes with an Individual's Reccurrence", # title
+         subtitle = " An individual that is back in remission after the cancer recurred is most likely to have a metastasizing cancer with abornmally inflamed auxillary lymphnode.") + # subtitle
+    theme(plot.title = element_text(size = 30, hjust = 0.5, color ="pink"),
+        plot.title.position = "plot", # title adjustments
+        plot.subtitle = element_text(size =20,hjust = 0.5, lineheight = 1.1, color = "pink"),
+        axis.title = element_text(size=30,color = "pink", hjust = 0.5), # title adjustments
+        axis.text = element_text(size = 30,color = "pink",hjust = 0.5), # text adjustments
+        panel.grid = element_line(linewidth = 0.35, linetype = FALSE, color = "white"), # background gridlines
+        plot.margin = unit(c(1.0, 1.0, 1.0, 1.0), "cm"), # margin adjustments
+        plot.background = element_rect(color = "white"))
+}
+else{
+  ggplot(data, aes(x = {{x}},
+                   y = {{y}},
+                   color = `deg.malig`))+
+    geom_density_ridges2() +
+    theme_ipsum_es() +
+    scale_color_brewer(palette = "RdPu") +
+    labs(x = "Recurrence Event",  # x axis
+         y = "Invasive Auxillary Lymph Nodes", # y axis
+         title = "Correlation of the Metastasized  Auxillary Lymph Nodes with an Individual's Reccurrence", # title
+         subtitle = " An individual that is back in remission after the cancer recurred is most likely to have a metastasizing cancer with abornmally inflamed auxillary lymphnode.") + # subtitle
+    theme(plot.title = element_text(size = 30, hjust = 0.5, color ="pink"),
+        plot.title.position = "plot", # title adjustments
+        plot.subtitle = element_text(size =20,hjust = 0.5, lineheight = 1.1, color = "pink"),
+        axis.title = element_text(size=30,color = "pink", hjust = 0.5), # title adjustments
+        axis.text = element_text(size = 30,color = "pink",hjust = 0.5), # text adjustments
+        panel.grid = element_line(linewidth = 0.35, linetype = FALSE, color = "white"), # background gridlines
+        plot.margin = unit(c(1.0, 1.0, 1.0, 1.0), "cm"), # margin adjustments
+        plot.background = element_rect(color = "white"))
+}
+}
+```
+### Animated Plot
+```{r}
+cancerplot(x = class, y = `inv.falsedes`)
+
+
+```
+### Stagnant Plot
+
+
+
+
