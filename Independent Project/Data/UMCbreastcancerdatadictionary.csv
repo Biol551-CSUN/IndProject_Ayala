@@ -1,13 +1,14 @@
-Variable,Unit ,Meaning,,,,,
-age,"20-29,30-39,40-49,50-59,60-69,70-79",age of the patient (10 year intervals),,,," 1. Class: no-recurrence-events, recurrence-events",
-mefalsepause,"It40, ge40, premefalse","It40 = about to turn 40 and in menopause, ge40 = are 40 and post-menopause, premeno = in premenopause",,,,"   2. age: 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80-89, 90-99.",
-tumor-size,"0-4,5-9,10-14,15-19,20-24,25-29,30-34,-35-39,40-44,45-49,50-54 in mm",size of the tumor in millimeters (mm),,,,"   3. menopause: lt40, ge40, premeno.",
-inv-falsedes,"0-2, 3-5,6-,9-11,12-14,15-17,24-26 in mm",range of invasive inflamed lymphnodes who did not take DES in millimeters (mm),,,,"   4. tumor-size: 0-4, 5-9, 10-14, 15-19, 20-24, 25-29, 30-34, 35-39, 40-44,",
-falsedes-caps,TRUE or FALSE,"DES = diethylstilbestrol is a synthetic form of estrogen hormone, TRUE = took it, FALSE = did not take",,,,"                  45-49, 50-54, 55-59.",
-deg-malig,"1,2,3","1 = acute degree of malignancy, 2 = medium degree of maliganncy, 3 = severe degree of malignancy",,,,"   5. inv-nodes: 0-2, 3-5, 6-8, 9-11, 12-14, 15-17, 18-20, 21-23, 24-26,",
-breast,left or right,certain breast that contains the cancer/tumor,,,,"                 27-29, 30-32, 33-35, 36-39.",
+Variable (characters),Unit  (characters),Meaning (characters),,,,,
+age,"20-29,30-39,40-49,50-59,60-69,70-79",age of the patient at the time of diagnosis (10 year intervals),,,,,
+mefalsepause is actually menopause (do not use mefalsepause),"It40, ge40, premefalse is actually premeno (do not use premefalse)","It40 = about to turn 40 and in menopause, ge40 = are 40 and post-menopause, premeno = in premenopause",,,,,
+tumor-size,"0-4,5-9,10-14,15-19,20-24,25-29,30-34,-35-39,40-44,45-49,50-54 in mm",size of the tumor in millimeters (mm),,,,,
+inv-falsedes is actually inv-nodes (do not use inv-falsedes),"0-2, 3-5,6-,9-11,12-14,15-17,24-26 in mm",the number (range 0 - 39) of axillary lymph nodes that contain metastatic breast cancer visible on histological examination,,,,,
+falsedes-caps is actually node-caps (do not use falsedes-caps),TRUE or FALSE,"DES = diethylstilbestrol is a synthetic form of estrogen hormone, TRUE = took it, FALSE = did not take.... if the cancer does metastasize to a lymph node, although outside the original site of the tumor, it may remain “contained” by the capsule of the lymph node. However, over time, and with more aggressive disease, the tumor may replace the lymph node and then penetrate the capsule, allowing it to invade the surrounding tissues",,,,,
+deg-malig,"1,2,3","1 = acute degree of malignancy, 2 = medium degree of maliganncy, 3 = severe degree of malignancy",,,,,
+breast,left or right,certain breast that contains the cancer/tumor,,,,,
 breast-quad,"left_up, left_low,central, right_up, right_low",position of where the tumor was apparent in the breast,,,,"   6. node-caps: yes, no.",
-irradiate,yes or no,"yes = underwent radiation therapy, no = dd not go through radiation therapy",,,,"   7. deg-malig: 1, 2, 3.",
-class,no-recurrence or recurence-events,no-recurrence = cancer did not come back or recurrence-events = cancer came back,,,,"   8. breast: left, right.",
-,,,,,,"   9. breast-quad: left-up, left-low, right-up,","right-low, central."
-,,,,,,  10. irradiat:,"yes, no."
+irradiate,yes or no,"yes = underwent radiation therapy, no = dd not go through radiation therapy",,,,,
+class,no-recurrence or recurence-events,no-recurrence = cancer did not come back or recurrence-events = cancer came back,,,,,
+,,,,,,,"right-low, central."
+,,,,,,,"yes, no."
+"Sidenote: Anywhere within in the variables that says ""false"" in the name means ""no"" so mefalsepause is menopause, etc.",,,,,,,
