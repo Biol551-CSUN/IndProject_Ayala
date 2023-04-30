@@ -60,6 +60,35 @@ heatcancer <- breastcancer %>%
 
 ```
 
+
+
+### Using a HeatMap 
+```{r The Hex Plot, fig.asp= 1.0, fig.align='center', fig.width=20, fig.height=7, fig.cap= "This figure shows the averages of texture sensitivity of the breast from the center point of the core tumor based on their average radii.", dev='pdf', echo=FALSE}
+
+  ggplot(data = breastcancer,aes(
+                x = texture_mean,
+                y = radius_mean,
+                )) +
+         geom_hex(stat = "binhex", position = "identity") +
+  labs(title = "Correlation of the two Frequencies,\n Average of Radius and Texture within Breast Cancer Patients", subtitle = "There are two groups of breast cancer patients,some with benign tumors and others with malignant tumors.", # title and subtitles x and y axes 
+       x="Average Texture",
+       y="Average Radius") +
+  theme_classic() +
+  theme(plot.title = element_text(size = 15, hjust = 0.5, color ="darkseagreen4"), # title size and color
+        plot.title.position = "plot", # title adjustments
+        plot.subtitle = element_text(size =10,hjust = 0.5, lineheight = 1.1, color = "darkseagreen"), # subtitle size and color
+        axis.title = element_text(size=15,color = "darkorchid4", hjust = 0.5), # title adjustments
+        axis.text = element_text(size = 10,color = "darkorchid4",hjust = 0.5), # text adjustments
+        panel.grid = element_line(linewidth = 0.35, linetype = "dotted", color = "darkorchid4"), # background gridlines
+        plot.margin = unit(c(1.0, 1.0, 1.0, 1.0), "cm"), # margin adjustments
+        plot.background = element_rect(color = "white", fill ="white")) # background color
+        
+        ggsave(here("Independent Project","Output","hexplot.jpeg"))
+
+
+```
+
+
 ### Making a Functional Plot - *To Be Animated or Not to Be Animated*
 
   ggplot(data=densitycancer, aes(x = class,
@@ -141,6 +170,25 @@ else{
 }
 }
 
+cancer %>%
+ggplot(aes(x = "deg-malig", 
+           y = "breast-quad", 
+           fill = stat(quantile))) +
+  stat_density_ridges(quantile_lines = TRUE,
+                      calc_ecdf = TRUE,
+                      geom = "density_ridges_gradient", 
+                      quantiles = c(0.05, 0.95)) +
+  scale_fill_manual(name = "Prob.", values = c("#E2FFF2", "white", "#B0E0E6"),
+                    labels = c("(0, 5%]", "(5%, 95%]", "(95%, 1]")) +
+ transition_states( 
+     year, # what are we animating by
+     transition_length = 2, #The relative length of the transition.
+     state_length = 1 # The length of the pause between transitions
+   )+
+  ease_aes("bounce-in-out")  +
+  ggtitle('Age of the Patient at the Time of Diagnosis')+ # title of year changes
+  anim_save(here("Independent Project","densitygif.gif")) # save
+
 ### Animated Plot
 
 densityplot(x = class, y = "inv-falsedes")
@@ -171,8 +219,7 @@ ggplot(data = densitycancer,aes(y = `inv-falsedes`, x = class, fill = diagnosis)
         plot.background = element_rect(color = "white"))
  anim_save(here("Independent Project","Output","densityplot.gif")) # save animation
 
-```{r}
-
+```{r The Bar Plot, fig.asp= 1.0, fig.align='center', fig.cap= "This animated figure illustrates the age of patients at the time of their diagnosis who have undergone a specific type of chemo therapy known as irradiation therapy which is more invasive and weakening.", echo=FALSE}
 ggplot(data = subset(barcancer, !is.na(age)),# drop all na's that were going to be included into the plot
        aes(x = age, # x axis
            fill = irradiat)) + # base this bar plot off of irradiation rate
@@ -189,7 +236,7 @@ ggplot(data = subset(barcancer, !is.na(age)),# drop all na's that were going to 
         state_length = 1) + # The length of the pause between transitions
         ease_aes("bounce-in-out") + # type of animation
   scale_fill_manual(values = beyonce_palette(2)) + # the color palette all blue :)
-  theme(plot.title = element_text(size = 20, hjust = 0.5, color ="darkgoldenrod1"), # title size and color
+  theme(plot.title = element_text(size = 16, hjust = 0.5, color ="darkgoldenrod1"), # title size and color
         plot.title.position = "plot", # title adjustments
         plot.subtitle = element_text(size =10,hjust = 0.5, lineheight = 1.1, color = "darkgoldenrod1"), # subtitle size and color
         axis.title = element_text(size=20,color = "cornflowerblue", hjust = 0.5), # title adjustments
@@ -201,74 +248,3 @@ ggplot(data = subset(barcancer, !is.na(age)),# drop all na's that were going to 
         anim_save(here("Independent Project","Output","barplotgif.gif"))
                    
 ```
-
-### HeatMap 
-```{r}
-
-  ggplot(data = breastcancer,aes(x = texture_mean,
-             y = radius_mean)) +
-         geom_hex(stat = "binhex", position = "identity") +
-  labs(title = "Correlation of the two Frequencies, Average of Radius and Texture within Breast Cancer Patients", subtitle = "There are two groups of breast cancer patients some with benign tumors and the other with malignant tumors.", # title and subtitles x and y axes 
-       x="Average Texture",
-       y="Average Radius") +
-  theme_classic() +
-   transition_states( 
-        texture_mean, # what are we animating by
-        transition_length = 2, #The relative length of the transition.
-        state_length = 1) + # The length of the pause between transitions
-        ease_aes("bounce-in-out") + # type of animation
-  theme(plot.title = element_text(size = 20, hjust = 0.5, color =""), # title size and color
-        plot.title.position = "plot", # title adjustments
-        plot.subtitle = element_text(size =10,hjust = 0.5, lineheight = 1.1, color = "darkseagreen4"), # subtitle size and color
-        axis.title = element_text(size=20,color = "darkseagreen", hjust = 0.5), # title adjustments
-        axis.text = element_text(size = 15,color = "darkorchid4",hjust = 0.5), # text adjustments
-        panel.grid = element_line(linewidth = 0.35, linetype = "dotted", color = "darkorchid4"), # background gridlines
-        plot.margin = unit(c(1.0, 1.0, 1.0, 1.0), "cm"), # margin adjustments
-        plot.background = element_rect(color = "white", fill ="white")) # background color
-        
-        anim_save(here("Independent Project","Output","hexplotgif.gif"))
-
-
-```
-
-ggplot(data = cancer, aes(x= class,
-                          y = "inv-nodes",
-                          fill = "deg-malig")) + 
-  geom_density_ridges(alpha = 0.5,
-                      stat = "binline",
-                      color = "white",
-                      size = 0.2) + 
-  theme_minimal() +
-  labs(x = "Average Texture", y = "Average Radius", title = "Correlation of the two Frequencies, Average of Radius and Texture within Breast Cancer Patients", subtitle = "There are two groups of breast cancer patients some with benign tumors and the other with malignant tumors.") + # title and subtitles + x and y axes 
-  transition_states( 
-     age, # what are we animating by
-     transition_length = 3, #The relative length of the transition.
-     state_length = 1 # The length of the pause between transitions
-   )+
-  ease_aes("sine-in-out")  +
- 
-  anim_save(here("Independent Project","testingif.gif"))
-
-
--------
-
-cancer %>%
-ggplot(aes(x = "deg-malig", 
-           y = "breast-quad", 
-           fill = stat(quantile))) +
-  stat_density_ridges(quantile_lines = TRUE,
-                      calc_ecdf = TRUE,
-                      geom = "density_ridges_gradient", 
-                      quantiles = c(0.05, 0.95)) +
-  scale_fill_manual(name = "Prob.", values = c("#E2FFF2", "white", "#B0E0E6"),
-                    labels = c("(0, 5%]", "(5%, 95%]", "(95%, 1]")) +
- transition_states( 
-     year, # what are we animating by
-     transition_length = 2, #The relative length of the transition.
-     state_length = 1 # The length of the pause between transitions
-   )+
-  ease_aes("bounce-in-out")  +
-  ggtitle('Age of the Patient at the Time of Diagnosis')+ # title of year changes
-  anim_save(here("Independent Project","densitygif.gif")) # save
-
-
