@@ -11,9 +11,9 @@ Breast Cancer is an extremely common branch of cancer that mainly impacts women.
 
 
 #### __Causes of Breast Cancer__
-The primary cause of breast cancer is usually through geentically inherited mutations to specific genes, i.e. BRCA1 and BRCA2 as well as starting menopause after the age of 55 and menstruating before the age of 12 which can lead to longer exposure to estrogen and other hormones which increase the likelihood of getting diagnosed with breast cancer.
+The primary cause of breast cancer is usually through genetically inherited mutations to specific genes, i.e. BRCA1 and BRCA2 as well as starting menopause after the age of 55 and menstruating before the age of 12 which can lead to longer exposure to estrogen and other hormones which increase the likelihood of getting diagnosed with breast cancer.
 
-*To Reduce Breast Cancer Risk according to the CDC*
+*To Reduce Breast Cancer Risk According to the CDC*
 - Be physically active
 - Drink alcoholic beverages in moderation
 - Limit your excess hormone intake and discuss with your primary care doctor
