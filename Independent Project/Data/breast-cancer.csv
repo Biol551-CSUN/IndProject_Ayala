@@ -1,4 +1,4 @@
-ge,mefalsepause,tumor-size,inv-falsedes,falsede-caps,deg-malig,breast,breast-quad,irradiat,class
+age,mefalsepause,tumor-size,inv-falsedes,falsede-caps,deg-malig,breast,breast-quad,irradiat,class
 40-49,premefalse,15-19,0-2,true,3,right,left_up,false,recurrence-events
 50-59,ge40,15-19,0-2,false,1,right,central,false,false-recurrence-events
 50-59,ge40,35-39,0-2,false,2,left,left_low,false,recurrence-events
