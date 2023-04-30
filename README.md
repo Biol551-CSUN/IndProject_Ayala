@@ -3,7 +3,7 @@
 
 #### __Purpose of this Project__
 
-Everyone knows someone in their life who has been diagnosed or passed from having a type of breast cancer. Hence, in this project I wanted to focus on a couple of factors that correlate to the cause of breast cancer and investigate which of these factors impact the recurrence of breast cancer as well as at certain ages predict what types of tumors with their particular features are the most common.
+Everyone knows someone in their life who has been diagnosed or passed from having a type of breast cancer. Hence, in this project I wanted to focus on a couple of factors that correlate to the cause of breast cancer and investigate which of these factors impact the recurrence of breast cancer as well as at certain ages, predict what types of tumors with their particular features are the most common.
 
 
 #### __What is Breast Cancer?__
