@@ -13,8 +13,8 @@ ypes of tumors with their particular features are most common. Most would say th
 
 
 #### __Data Sets Used__
-- Taken from Kaggle Website but intially from UCI Machine Learning Repository
-- This dataset is taken from OpenML (about breast cancer occurrences) - breast-cancer.csv
+- UCI Machine Learning's Breast Cancer Wisconsin (Diagnostic) Data Set - Data/data.csv)
+- Taken from Kaggle Website but intially this dataset is taken from OpenML (about breast cancer occurrences) - Data/breast-cancer.csv
   - Provided by Matjaz Zwitter & Milan Soklic (physicians) Institute of Oncology University Medical Center Ljubljana, Yugoslavia -- Donors: Ming Tan and Jeff Schlimmer (Jeffrey.Schlimmer@a.gp.cs.cmu.edu) -- Date: 11 July 1988.
 
 I created 3 outputs that emphasize this
