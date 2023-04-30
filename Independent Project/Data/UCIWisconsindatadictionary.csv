@@ -1,0 +1,33 @@
+Variable,Unit ,Meaning
+id ,N/A,ID Number of the Patient
+diagnosis,M or B,"The diagnosis of breast tissues M= malignant tumor, B = benign tumor"
+radius_mean,N/A,mean of distances from center to points on the perimeter
+texture_mean,N/A,standard deviation of gray-scale values
+perimeter_mean,N/A,mean size of the core tumor
+area_mean,N/A,mean of the primary site of cancer
+smoothness_mean,N/A,mean of local variation in radius lengths
+compactness_mean,N/A,mean of perimeter^2 / area - 1.0
+concavity_mean,N/A,mean of severity of concave portions of the contour
+concave points_mean,N/A,mean for number of concave portions of the contour
+symmetry_mean,N/A,mean of the density of each breast combined
+fractal_dimension_mean,N/A,"""coastline approximation"" - 1.0"
+radius_se,N/A,standard error of mean of distances from center points on the perimeter
+texture_se,N/A,standard error of the gray-scale values
+perimeter_se,N/A,standard error of the size of the core tumor
+area_se,N/A,standard error of the primary site of cancer
+smoothness_se,N/A,standard error of the local variation in radius lengths
+compactness_se,N/A,standard error of the perimeter^2/area -1.0
+concavity_se,N/A,standard error of the severity of concave portions of the contour
+concave points_se,N/A,standard error of the number of concave portions of the contour
+symmetry_se,N/A,standard error of the symmetrical density of each breast combined
+fractal_dimension_se,N/A,standard error of the coastline approximation -1.0
+radius_worst,N/A,worst values of mean of distances from center points on the perimeter
+texture_worst,N/A,worst values of the gray-scale values
+perimeter_worst,N/A,worst values of the size of the core tumor
+area_worst,N/A,worst values of the primary site of cancer
+smoothness_worst,N/A,worst values of the local variation in radius lengths
+compactness_worst,N/A,worst values of the perimeter^2/area -1.0
+concavity_worst,N/A,worst values of the severity of concave portions of the contour
+concave points_worst,N/A,worst values of the number of concave portions of the contour
+symmetry_worst,N/A,worst values of the densities of each breast combined
+fractal_dimension_worst,N/A,worst  values of the coastline approximation -1.0
