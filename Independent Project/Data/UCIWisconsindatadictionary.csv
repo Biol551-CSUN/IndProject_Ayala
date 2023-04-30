@@ -1,4 +1,4 @@
-Variable (characters),Unit (characters) ,Meaning (characters)
+Variable (character),Unit (character) ,Meaning (character)
 id ,N/A,ID Number of the Patient
 diagnosis,M or B,"The diagnosis of breast tissues M= malignant tumor, B = benign tumor"
 radius_mean,N/A,mean of distances from center to points on the perimeter
