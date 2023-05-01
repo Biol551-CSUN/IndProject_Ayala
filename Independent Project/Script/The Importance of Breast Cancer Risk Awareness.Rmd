@@ -1,5 +1,5 @@
 ---
-title: "The Importance of Breast Cancer Risk Awareness"
+title: "The Importance of Breast Cancer Risk Awareness: A Thorough Analysis"
 author: "Nicole Ayala"
 date: "`r Sys.Date()`"
 output: 
