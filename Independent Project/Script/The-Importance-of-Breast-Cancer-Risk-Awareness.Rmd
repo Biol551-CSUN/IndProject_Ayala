@@ -221,7 +221,7 @@ ggplot(data = subset(barcancer,!is.na(age)),# drop all na's that were going to b
         anim_save(here("Independent Project","Output","barplotgif.gif")) # save animation!
                    
 ```
-**Are middle aged individuals more common to undergo irradiation therapy compared to those 50 and older?**
+## **Are middle aged individuals more common to undergo irradiation therapy compared to those 50 and older?**
 
 There is no definitive yes or no as shown in the animation, both middle aged and older patients tend to not undergo irradiation therapy due to it's invasive personality of eradicating everything through the use of high energy levels of radiation form various rays such as gamma and x-rays as well as on an atomic level: protons, neutrons, etc and may undergo chemo therapy instead which is the use of drugs such as taxol to destroy and shrink cancerous tumors directly from the source. However, anyone younger than 70-79 had a percentage of individuals undergo irradiation therapy while those who were 70 and above would not have survived to go through with that certain type of therapy due to their age.
 
