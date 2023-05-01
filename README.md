@@ -19,7 +19,7 @@ The primary cause of breast cancer is usually through genetically inherited muta
 - Limit your excess hormone intake and discuss with your primary care doctor
 - If pregnant, breastfeed if able to
 - Learn about your familial history of any past cancer history or inherited mutations in BRCA genes4
-Link:https://www.cdc.gov/cancer/breast/basic_info/prevention.htm
+Link: https://www.cdc.gov/cancer/breast/basic_info/prevention.htm
 
 
 
@@ -30,5 +30,4 @@ Link:https://www.cdc.gov/cancer/breast/basic_info/prevention.htm
   - Provided by Matjaz Zwitter & Milan Soklic (physicians) Institute of Oncology University Medical Center Ljubljana, Yugoslavia -- Donors: Ming Tan and Jeff Schlimmer (Jeffrey.Schlimmer@a.gp.cs.cmu.edu) -- Date: 11 July 1988.
   - Link: https://archive.ics.uci.edu/ml/datasets/breast+cancer
 
-I created 3 outputs that emphasize this
 
