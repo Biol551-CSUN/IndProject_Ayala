@@ -91,7 +91,7 @@ heatcancer <- breastcancer %>% # piping cancer dataset to heatcancer
 ```
 ## **How do the quantitative variables matter when it comes to determining breast cancer malignancy?**
 
-According to the figure above, these quantitative variables, specifically here average of both breast radii and texture demonstrate that individuals who tend to have higher radii(the average total of distance from the areola to the primary site of where the cancer was discovered) is more likely to have a higher texture (measures standard deviation of the gray scale values of the imaging done) so if there were some abnormal benign or malignant micro/macrocalcifications, (excessive white fatty breast tissue) it would most likely be malignant if both average texture and mean were above the average. In a normal mammogram, normal fatty tissue would be all dark with little streaks of dense white fatty tissue, but here it's not the usual case.
+According to the figure above, these quantitative variables, specifically the average of both breast radii and texture demonstrate that individuals who tend to have higher radii(the average total of distance from the areola to the primary site of where the cancer was discovered) is more likely to have a higher texture (measures standard deviation of the gray scale values of the imaging done) so if there were some abnormal benign or malignant micro/macrocalcifications, (excessive white fatty breast tissue) it would most likely be malignant if both average texture and mean were above the average. In a normal mammogram, normal fatty tissue would be all dark with little streaks of dense white fatty tissue, but here it's not the usual case.
 
 ![Breast Calcification](https://www.verywellhealth.com/thmb/iGU4zAtk1LcjDwogSj2AZRZEucc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/calcifications-56a0b6835f9b58eba4b30bc3.jpeg){ width="200" height="200" }
 
@@ -114,7 +114,7 @@ ggplot(data = subset(cancer,!is.na(`breast-quad`)), # data is breastcancer
   scale_color_manual(values = c("30-39" = "darkgreen", "40-49" = "firebrick3", "50-59" = "deepskyblue", "60-69" = "gold2", "70-79"="antiquewhite4")) + # used discrete value colors to color in the age differences
   theme_tinyhand() + # the theme
    labs(title = "The Impact Between Tumor Size and Breast Quadrant on \n Malignancy Severity at Various Ages: A Comprehensive Analysis", # title
-       subtitle = "Most common areas in the breast that develop a tumor of a 2-3 malignancy \n is the center areola and the lower and upper quadrants of the right side.", # subtitle
+       subtitle = "Most common areas in the breast that develop a tumor of a 2-3 malignancy \n is the center areola and the lower and upper quadrants of the left side.", # subtitle
     x = "Size of Tumor",  # x axis
     y = "Breast Quadrant",# y axis
     size = "Degree of Malignancy", # size
